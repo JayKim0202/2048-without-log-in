@@ -1,1 +1,2 @@
 C:\Users\jayjk\Desktop\Git_Hub\2048-without-log-in\2048\Debug\2048.exe
+C:\Users\unive\Desktop\git\2048-without-log-in\2048\Debug\2048.exe

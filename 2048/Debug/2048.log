@@ -1,6 +1,2 @@
-﻿  check_something.c
-  default_frame.c
-  main.c
-  run.c
-  코드를 생성하고 있습니다...
-  2048.vcxproj -> C:\Users\jayjk\Desktop\Git_Hub\2048-without-log-in\2048\Debug\2048.exe
+﻿  default_frame.c
+  2048.vcxproj -> C:\Users\unive\Desktop\git\2048-without-log-in\2048\Debug\2048.exe

@@ -27,7 +27,7 @@ void starting_screen()
 	for (int i = 0; i < 24; i++)
 		printf("¡à");
 
-	coord.X = 2;
+	coord.X = 6;
 	coord.Y = 10;
 	SetConsoleCursorPosition(handle, coord);
 	printf("¡æ ¡ç ¡è ¡é : MOVE");

@@ -1,2 +1,7 @@
 C:\Users\jayjk\Desktop\Git_Hub\2048-without-log-in\2048\Debug\2048.exe
-C:\Users\unive\Desktop\git\2048-without-log-in\2048\Debug\2048.exe
+C:\Users\jayjk\Desktop\2048-without-log-in-main\2048\Debug\2048.exe
+C:\Users\mi756\OneDrive\바탕 화면\2048-without-log-in-main\2048\Debug\2048.exe
+C:\Users\mi756\OneDrive\바탕 화면\2023-1-꿈드림설계\2048-without-log-in-main\2048\Debug\2048.exe
+C:\Users\mi756\OneDrive\바탕 화면\2023\2023-1-꿈드림설계\2048-without-log-in-main\2048\Debug\2048.exe
+C:\Users\mi756\OneDrive\바탕 화면\2023\2023-1-꿈드림설계\2048\Debug\2048.exe
+C:\Users\unive\Desktop\git\2048\Debug\2048.exe

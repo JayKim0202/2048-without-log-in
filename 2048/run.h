@@ -1,8 +1,11 @@
+#pragma once
+
 #ifndef __RUN_H__
 #define __RUN_H__
 
 #include "main.h"
 
+// Å° ÄÚµå
 #define LEFT 75
 #define RIGHT 77
 #define UP 72

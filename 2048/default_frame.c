@@ -16,18 +16,143 @@ void starting_screen()
 	// ¡á ¡à ¡æ ¡ç ¡è ¡é
 	// ¦¡ ¦¢ ¦£ ¦¤ ¦¥ ¦¦
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // Èò»ö
 	for (int i = 0; i < 24; i++)
 		printf("¡à");
 	printf("\n");
-	printf("¡à¡à¡á¡á¡á¡à¡à¡à¡á¡á¡à¡à¡á¡à¡à¡à¡à¡à¡á¡á¡á¡à¡à¡à\n");
-	printf("¡à¡à¡à¡à¡à¡á¡à¡á¡à¡à¡á¡à¡á¡à¡à¡à¡à¡á¡à¡à¡à¡á¡à¡à\n");
-	printf("¡à¡à¡à¡à¡á¡à¡à¡á¡à¡à¡á¡à¡á¡à¡á¡à¡à¡à¡á¡á¡á¡à¡à¡à\n");
-	printf("¡à¡à¡à¡á¡à¡à¡à¡á¡à¡à¡á¡à¡á¡á¡á¡á¡à¡á¡à¡à¡à¡á¡à¡à\n");
-	printf("¡à¡à¡á¡á¡á¡á¡à¡à¡á¡á¡à¡à¡à¡à¡á¡à¡à¡à¡á¡á¡á¡à¡à¡à\n");
+
+	// 2048¿¡ »ö»ó ³Ö±â
+	//printf("¡à¡à¡á¡á¡á¡à¡à¡à¡á¡á¡à¡à¡á¡à¡à¡à¡à¡à¡á¡á¡á¡à¡à¡à\n");
+	//printf("¡à¡à¡à¡à¡à¡á¡à¡á¡à¡à¡á¡à¡á¡à¡à¡à¡à¡á¡à¡à¡à¡á¡à¡à\n");
+	//printf("¡à¡à¡à¡à¡á¡à¡à¡á¡à¡à¡á¡à¡á¡à¡á¡à¡à¡à¡á¡á¡á¡à¡à¡à\n");
+	//printf("¡à¡à¡à¡á¡à¡à¡à¡á¡à¡à¡á¡à¡á¡á¡á¡á¡à¡á¡à¡à¡à¡á¡à¡à\n");
+	//printf("¡à¡à¡á¡á¡á¡á¡à¡à¡á¡á¡à¡à¡à¡à¡á¡à¡à¡à¡á¡á¡á¡à¡à¡à\n");
+
+	// µÎ ¹øÂ° ÁÙ
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // 2´Â ¿Á»ö
+	printf("¡á¡á¡á"); // 2
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 4´Â ¹àÀº »¡°­
+	printf("¡á"); // 4
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á¡á¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à\n");
+	
+	// ¼¼ ¹øÂ° ÁÙ
+	printf("¡à¡à¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // 2´Â ¿Á»ö
+	printf("¡á"); // 2
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 4´Â ¹àÀº »¡°­
+	printf("¡á"); // 4
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à\n");
+
+	// ³× ¹øÂ° ÁÙ
+	printf("¡à¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // 2´Â ¿Á»ö
+	printf("¡á"); // 2
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 4´Â ¹àÀº »¡°­
+	printf("¡á"); // 4
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 4´Â ¹àÀº »¡°­
+	printf("¡á"); // 4
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á¡á¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à\n");
+
+	// ´Ù¼¸ ¹øÂ° ÁÙ
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // 2´Â ¿Á»ö
+	printf("¡á"); // 2
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 4´Â ¹àÀº »¡°­
+	printf("¡á¡á¡á¡á"); // 4
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à\n");
+	
+	// ¿©¼¸ ¹øÂ° ÁÙ
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // 2´Â ¿Á»ö
+	printf("¡á¡á¡á¡á"); // 2
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 0Àº ¹àÀº ¿Á»ö
+	printf("¡á¡á"); // 0
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 4´Â ¹àÀº »¡°­
+	printf("¡á"); // 4
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à");
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 8Àº ¹àÀº ³ë¶û
+	printf("¡á¡á¡á"); // 8
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0); // °ËÁ¤
+	printf("¡à¡à¡à\n");
+
 	for (int i = 0; i < 24; i++)
 		printf("¡à");
 
-	coord.X = 6;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
+
+	coord.X = 2; //2¸é ¹ÎÇü ¾ð´Ï²¨ Á¤»ó ¹èÄ¡, 6ÀÌ¸é ¼öÁø²¨ Á¤»ó ¹èÄ¡
 	coord.Y = 10;
 	SetConsoleCursorPosition(handle, coord);
 	printf("¡æ ¡ç ¡è ¡é : MOVE");
@@ -126,7 +251,37 @@ void play_screen(int x, int y, int other, int score)
 	coord.X = 5;
 	coord.Y = 1;
 	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
 	printf("2048");
+
+	// Á¡¼ö(score)°¡ 300ÀÇ ¹è¼ö¸¦ ³Ñ¾î°¥ ¶§¸¶´Ù °ÔÀÓ È­¸é »ö»ó º¯ÇÏ°Ô Ãß°¡
+	switch (score / 300)
+	{
+	case 1: case 8: case 15:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // »¡
+		break;
+	case 2: case 9: case 16:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6); // ÁÖ
+		break;
+	case 3: case 10: case 17:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // ³ë
+		break;
+	case 4: case 11: case 18:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10); // ÃÊ
+		break;
+	case 5: case 12: case 19:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // ÆÄ
+		break;
+	case 6: case 13: case 20:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9); // ³²
+		break;
+	case 7: case 14: case 21:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13); // º¸
+		break;
+	default:
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
+		break;
+	}
 
 	for (int i = 3; i <= y; i += 5)
 	{
@@ -162,26 +317,36 @@ void play_screen(int x, int y, int other, int score)
 	coord.X = other;
 	coord.Y = 4;
 	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
 	printf("¡æ ¡ç ¡è ¡é : MOVE");
-
+	
 	coord.X = other;
 	coord.Y = 5;
 	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
 	printf("ESC : QUIT");
 
 	coord.X = other;
 	coord.Y = 6;
 	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
 	printf("s or S : PAUSE");
 
 	coord.X = other;
 	coord.Y = 7;
 	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
 	printf("ENTER : PLAY");
 
 	coord.X = other;
 	coord.Y = 9;
 	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
+
+	coord.X = other;
+	coord.Y = 9;
+	SetConsoleCursorPosition(handle, coord);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»ö
 	printf("SCORE : %d", score);
 }
 
@@ -342,11 +507,12 @@ void done_game_screen()
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»öÀ¸·Î Ãâ·Â
 
 	coord.X = 10;
 	coord.Y = 7;
 	SetConsoleCursorPosition(handle, coord);
-	printf("°ÔÀÓÀ» ³¡³»½Ã°Ú½À´Ï±î?");
+	printf("°ÔÀÓÀ» ³¡³»½Ã°Ú½À´Ï±î? score´Â ¼øÀ§¿¡ ¹Ý¿µµÇÁö ¾Ê½À´Ï´Ù.");
 
 	coord.X = 17;
 	coord.Y = 9;
@@ -370,6 +536,7 @@ void yes_no_box(int x)
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»öÀ¸·Î Ãâ·Â
 
 	coord.X = x;
 	coord.Y = 8;
@@ -457,6 +624,7 @@ void game_over_screen(int score)
 	HANDLE handle;
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15); // Èò»öÀ¸·Î Ãâ·Â
 
 	coord.X = 11;
 	coord.Y = 6;
@@ -545,4 +713,127 @@ void game_over_box(int x)
 	coord.Y = 10;
 	SetConsoleCursorPosition(handle, coord);
 	printf("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+}
+
+void rank_frame() 
+{
+	HANDLE handle;
+	handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord;
+
+	system("cls");
+
+	coord.X = 0;
+	coord.Y = 0;
+	SetConsoleCursorPosition(handle, coord);
+	for (int i = 0; i < 20; i++)
+	{
+		printf("¡á");
+	}
+
+	coord.X = 0;
+	coord.Y = 1;
+	SetConsoleCursorPosition(handle, coord);
+	for (int i = 0; i < 24; i++)
+	{
+		printf("¡á");
+		coord.Y++;
+		SetConsoleCursorPosition(handle, coord);
+	}
+
+	coord.X = 38;
+	coord.Y = 1;
+	SetConsoleCursorPosition(handle, coord);
+	for (int i = 0; i < 24; i++)
+	{
+		printf("¡á");
+		coord.Y++;
+		SetConsoleCursorPosition(handle, coord);
+	}
+
+	coord.X = 0;
+	coord.Y = 25;
+	SetConsoleCursorPosition(handle, coord);
+	for (int i = 0; i < 20; i++)
+	{
+		printf("¡á");
+	}
+
+	coord.X = 18;
+	coord.Y = 2;
+	SetConsoleCursorPosition(handle, coord);
+	printf("RANK");
+}
+
+// ·©Å© ¼øÀ§ Ãâ·Â
+void rank_print(Player* player, int size)
+{
+	HANDLE handle;
+	handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord;
+
+	Player* top10 = cut_10th(player); // »óÀ§ 10À§¸¸ »õ·Î¿î Player ¹è¿­¿¡ ´ãÀ½
+
+	// ¼øÀ§ Ãâ·Â
+	if (size > 0) {
+		coord.X = 6;
+		coord.Y = 4;
+		SetConsoleCursorPosition(handle, coord);
+		printf("1st  player%d  %d", top10[0].playerNum, top10[0].score);
+	}
+	if (size > 1) {
+		coord.X = 6;
+		coord.Y = 6;
+		SetConsoleCursorPosition(handle, coord);
+		printf("2nd  player%d  %d", top10[1].playerNum, top10[1].score);
+	}
+	if (size > 2) {
+		coord.X = 6;
+		coord.Y = 8;
+		SetConsoleCursorPosition(handle, coord);
+		printf("3rd  player%d  %d", top10[2].playerNum, top10[2].score);
+	}
+	if (size > 3) {
+		coord.X = 6;
+		coord.Y = 10;
+		SetConsoleCursorPosition(handle, coord);
+		printf("4th  player%d  %d", top10[3].playerNum, top10[3].score);
+	}
+	if (size > 4) {
+		coord.X = 6;
+		coord.Y = 12;
+		SetConsoleCursorPosition(handle, coord);
+		printf("5th  player%d  %d", top10[4].playerNum, top10[4].score);
+	}
+	if (size > 5) {
+		coord.X = 6;
+		coord.Y = 14;
+		SetConsoleCursorPosition(handle, coord);
+		printf("6th  player%d  %d", top10[5].playerNum, top10[5].score);
+	}
+	if (size > 6) {
+		coord.X = 6;
+		coord.Y = 16;
+		SetConsoleCursorPosition(handle, coord);
+		printf("7th  player%d  %d", top10[6].playerNum, top10[6].score);
+	}
+	if (size > 7) {
+		coord.X = 6;
+		coord.Y = 18;
+		SetConsoleCursorPosition(handle, coord);
+		printf("8th  player%d  %d", top10[7].playerNum, top10[7].score);
+	}
+	if (size > 8) {
+		coord.X = 6;
+		coord.Y = 20;
+		SetConsoleCursorPosition(handle, coord);
+		printf("9th  player%d  %d", top10[8].playerNum, top10[8].score);
+	}
+	if (size > 9) {
+		coord.X = 6;
+		coord.Y = 20;
+		SetConsoleCursorPosition(handle, coord);
+		printf("10th  player%d  %d", top10[9].playerNum, top10[9].score);
+	}
+	_getch();
 }

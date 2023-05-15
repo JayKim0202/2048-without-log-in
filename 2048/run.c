@@ -1,6 +1,8 @@
 #include "run.h"
 
 // 시작화면 작동부
+// 받을 수 있는 모든 키에 대한 경우의 수를 모두 넣어놓음
+// 방향키는 2바이트
 void run_starting_screen()
 {
 	int kb_input;	// 키받는 변수
@@ -39,8 +41,12 @@ void run_starting_screen()
 				vertical_selection_box(box_location[location_count]);
 				break;
 			case 2:		// RANK
-				// 랭크 함수를 넣음 (아직 안만듬..ㅋ)
-				// 데이터 세이빙 소스파일 생성해야함 (물론 아직 안만듬..ㅋ)
+				rank_frame();
+				rank_print(fread_allPlayers(), fread_playerNum());
+				system("cls");	// 위의 함수가 끝나면 다시 시작화면을 출력하기 위해 화면은 클리어 해줘야함
+				// 시작화면 출력
+				starting_screen();
+				vertical_selection_box(box_location[location_count]);
 				break;
 			}
 		}
@@ -75,6 +81,7 @@ void run_starting_screen()
 }
 
 // 모드화면 작동부
+// start에서 엔터 누른 후
 void run_mode_screen()
 {
 	int box_location[3] = { 2, 12, 22 };	// 네모 칸들의 생성 위치 좌표
@@ -215,6 +222,7 @@ void run_real_game3()
 			int temp_kb;
 			system("cls");
 			game_over_screen(score);
+			fwrite_score(score);
 			game_over_box(box_location[location_count]);
 
 			while (1)
@@ -262,6 +270,9 @@ void run_real_game3()
 			system("cls");
 			win_screen(score);
 			game_over_box(box_location[location_count]);
+
+			// 스코어 저장하기
+			fwrite_score(score);
 
 			while (1)
 			{
@@ -428,6 +439,7 @@ void run_real_game3()
 				{
 					if (number_table[i][j] != 0)
 						print_number(i, j, number_table[i][j]);
+
 				}
 			}
 			break;
@@ -546,6 +558,9 @@ void run_real_game4()
 			game_over_screen(score);
 			game_over_box(box_location[location_count]);
 
+			// 스코어 저장하기
+			fwrite_score(score);
+
 			while (1)
 			{
 				temp_kb = _getch();
@@ -591,6 +606,9 @@ void run_real_game4()
 			system("cls");
 			win_screen(score);
 			game_over_box(box_location[location_count]);
+
+			// 스코어 저장하기
+			fwrite_score(score);
 
 			while (1)
 			{
@@ -875,6 +893,9 @@ void run_real_game5()
 			game_over_screen(score);
 			game_over_box(box_location[location_count]);
 
+			// 스코어 저장하기
+			fwrite_score(score);
+
 			while (1)
 			{
 				temp_kb = _getch();
@@ -920,6 +941,9 @@ void run_real_game5()
 			system("cls");
 			win_screen(score);
 			game_over_box(box_location[location_count]);
+
+			// 스코어 저장하기
+			fwrite_score(score);
 
 			while (1)
 			{
@@ -1132,7 +1156,7 @@ void run_real_game5()
 	}
 }
 
-// 커서 숨김
+// 커서 숨김 - 커서 깜빡이는거 없애는 코드
 void cursor_view_f()
 {
 	CONSOLE_CURSOR_INFO cursorInfo = { 0, };

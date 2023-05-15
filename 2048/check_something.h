@@ -1,7 +1,10 @@
+#pragma once
+
 #ifndef _CHECK_SOMETHING_H__
 #define _CHECK_SOMETHING_H__
 
 #include "main.h"
+#include "structure.h"
 
 // cmd창의 네모칸의 중심 좌표를 저장할 구조체
 typedef struct Grid {
@@ -53,5 +56,14 @@ void right5(int number_table[][5], int* score);
 int is_full5(int number_table[][5]);
 // 상하좌우로 같은 숫자가 있는지 확인
 int is_same5(int number_table[][5]);
+
+// 순위 계산
+Player* calculate_rank(Player* palyer);
+
+// 순위 오름차순 정렬
+void asc_rank(Player* player, int size);
+
+// top10 만 잘라서 리턴
+Player* cut_10th(Player* player);
 
 #endif // !_CHECK_SOMETHING_H__

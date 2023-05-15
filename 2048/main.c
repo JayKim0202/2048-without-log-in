@@ -7,5 +7,6 @@ int main()
 	// 커서의 반짝임을 지워줌
 	cursor_view_f();
 	// 시작 화면
+	// run만 들어가면 main은 끝
 	run_starting_screen();
 }

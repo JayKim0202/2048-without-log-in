@@ -1,7 +1,10 @@
+#pragma once
+
 #ifndef __DEFAULT_FRAME_H__
 #define __DEFAULT_FRAME_H__
 
 #include "main.h"
+#include "structure.h"
 
 // 시작화면
 void starting_screen();
@@ -32,5 +35,10 @@ void game_over_screen(int score);
 void win_screen(int score);
 // game_over_box에서 사용되는 네모칸
 void game_over_box(int x);
+// 랭크 화면 틀, 제목 출력
+void rank_frame();
+// 랭크 순위 출력
+void rank_print(Player* player, int size);
+
 
 #endif // !__DEFAULT_FRAME_H__

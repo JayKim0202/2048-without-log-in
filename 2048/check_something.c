@@ -1,4 +1,5 @@
 #include "check_something.h"
+// 3x3, 4x4, 5x5에 사용되는 함수는 반복 
 
 // 화면에 숫자를 출력함
 void print_number(int x, int y, int num)
@@ -9,6 +10,7 @@ void print_number(int x, int y, int num)
 
 	// cmd창에 숫자를 출력할 위치의 좌표
 	// 5x5는 만들면서 최적화 해야함
+	// 좌표는 하나하나 지정해 놓은 것
 	Grid grid[5][5] = {
 		{{.x = 5, .y = 4}, {.x = 13, .y = 4}, {.x = 21, .y = 4}, {.x = 30, .y = 4}, {.x = 38, .y = 4}},
 		{{.x = 5, .y = 9}, {.x = 13, .y = 9}, {.x = 21, .y = 9}, {.x = 30, .y = 9}, {.x = 38, .y = 9}},
@@ -25,12 +27,39 @@ void print_number(int x, int y, int num)
 	coord.X = grid[x][y].x;
 	coord.Y = grid[x][y].y;
 	SetConsoleCursorPosition(handle, coord);
+
+	// 색깔 추가
+	if (num == 2) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10); // 밝은 흰색
+	} else if (num == 4) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9); // 밝은 파랑
+	} else if (num == 8) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11); // 밝은 옥색
+	} else if (num == 16) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); // 밝은 빨강
+	} else if (num == 32) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6); // 어두운 노랑
+	} else if (num == 64) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 밝은 노랑
+	} else if (num == 128) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); // 파랑
+	} else if (num == 256) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9); // 밝은 파랑
+	} else if (num == 512) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2); // 초록
+	} else if (num == 1024) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5); // 자주
+	} else if (num == 2048) {
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1); // 파랑
+	}
+
 	printf("%4d", num);
 }
 
 //3x3
 
 // ↑이 방향키를 눌렀을 때 실행되는 함수
+// 3x3 들어가서 위방향키 눌렀을 떄 합쳐지는거 체크
 void up3(int number_table[][3], int* score)
 {
 	// 두번 반복해주는 이유는 더셈을 진행한 후, 비워져있는 칸이 생길 수 있기 때문이다.
@@ -230,7 +259,7 @@ void right3(int number_table[][3], int* score)
 	}
 }
 
-// 꽉 찼는지 확인
+// 3x3 화면이 꽉 찼는지 확인
 int is_full3(int number_table[][3])
 {
 	int full = 0;
@@ -248,6 +277,7 @@ int is_full3(int number_table[][3])
 }
 
 // 상하좌우로 같은 숫자가 있는지 확인
+// 방향키 이동했을 때 같은 숫자가 있으면 합치기 위함
 int is_same3(int number_table[][3])
 {
 	int same = 0;
@@ -624,4 +654,62 @@ int is_same5(int number_table[][5])
 	}
 
 	return same;
+}
+
+// 순위 계산
+Player* calculate_rank(Player* player) {
+	int numOfPlayers = fread_playerNum();
+
+	// 내림차순으로 정렬
+	asc_rank(player, numOfPlayers);
+
+	for (int i = 0; i < numOfPlayers; i++) {
+		player[i].rank = i + 1;
+		printf("%d %d:%d\n", player[i].rank, player[i].playerNum, player[i].score);
+	}
+
+	// 정렬한거 보내주기
+	return player;
+}
+
+// 오름차순 정렬
+void asc_rank(Player* player, int size)
+{
+	int maxIdx;
+	Player temp;
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		maxIdx = i;
+		for (int j = i + 1; j < size; j++)
+		{
+			if (player[j].score < player[maxIdx].score)
+				maxIdx = j;
+			else if ((player[j].score == player[maxIdx].score) && (player[j].playerNum < player[maxIdx].playerNum))
+				maxIdx = j;
+		}
+
+		temp = player[i];
+		player[i] = player[maxIdx];
+		player[maxIdx] = temp;
+	}
+}
+
+// top10 만 잘라서 리턴
+Player* cut_10th(Player* player) {
+	int numOfPlayers = fread_playerNum();
+
+	if (numOfPlayers > 10) {
+		numOfPlayers = 10;
+	}
+
+	Player* topten = calloc(10, sizeof(Player));
+
+	for (int i = 0; i < numOfPlayers; i++) {
+		topten[i].rank = player[i].rank;
+		topten[i].playerNum = player[i].playerNum;
+		topten[i].score = player[i].score;
+	}
+
+	return topten;
 }

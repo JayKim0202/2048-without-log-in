@@ -143,12 +143,15 @@
     <ClInclude Include="default_frame.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="run.h" />
+    <ClInclude Include="save_player.h" />
+    <ClInclude Include="structure.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="check_something.c" />
     <ClCompile Include="default_frame.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="run.c" />
+    <ClCompile Include="save_player.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

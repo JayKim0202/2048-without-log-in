@@ -665,7 +665,7 @@ Player* calculate_rank(Player* player) {
 
 	for (int i = 0; i < numOfPlayers; i++) {
 		player[i].rank = i + 1;
-		printf("%d %d:%d\n", player[i].rank, player[i].playerNum, player[i].score);
+		//printf("%d %d:%d\n", player[i].rank, player[i].playerNum, player[i].score);
 	}
 
 	// 정렬한거 보내주기
@@ -704,6 +704,8 @@ Player* cut_10th(Player* player) {
 	}
 
 	Player* topten = calloc(10, sizeof(Player));
+	player = calculate_rank(player);
+
 
 	for (int i = 0; i < numOfPlayers; i++) {
 		topten[i].rank = player[i].rank;

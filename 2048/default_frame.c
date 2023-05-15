@@ -779,61 +779,61 @@ void rank_print(Player* player, int size)
 		coord.X = 6;
 		coord.Y = 4;
 		SetConsoleCursorPosition(handle, coord);
-		printf("1st  player%d  %d", top10[0].playerNum, top10[0].score);
+		printf("1st  player%d  %d", top10[size - 1].playerNum, top10[size - 1].score);
 	}
 	if (size > 1) {
 		coord.X = 6;
 		coord.Y = 6;
 		SetConsoleCursorPosition(handle, coord);
-		printf("2nd  player%d  %d", top10[1].playerNum, top10[1].score);
+		printf("2nd  player%d  %d", top10[size - 2].playerNum, top10[size - 2].score);
 	}
 	if (size > 2) {
 		coord.X = 6;
 		coord.Y = 8;
 		SetConsoleCursorPosition(handle, coord);
-		printf("3rd  player%d  %d", top10[2].playerNum, top10[2].score);
+		printf("3rd  player%d  %d", top10[size - 3].playerNum, top10[size - 3].score);
 	}
 	if (size > 3) {
 		coord.X = 6;
 		coord.Y = 10;
 		SetConsoleCursorPosition(handle, coord);
-		printf("4th  player%d  %d", top10[3].playerNum, top10[3].score);
+		printf("4th  player%d  %d", top10[size - 4].playerNum, top10[size - 4].score);
 	}
 	if (size > 4) {
 		coord.X = 6;
 		coord.Y = 12;
 		SetConsoleCursorPosition(handle, coord);
-		printf("5th  player%d  %d", top10[4].playerNum, top10[4].score);
+		printf("5th  player%d  %d", top10[size - 5].playerNum, top10[size - 5].score);
 	}
 	if (size > 5) {
 		coord.X = 6;
 		coord.Y = 14;
 		SetConsoleCursorPosition(handle, coord);
-		printf("6th  player%d  %d", top10[5].playerNum, top10[5].score);
+		printf("6th  player%d  %d", top10[size - 6].playerNum, top10[size - 6].score);
 	}
 	if (size > 6) {
 		coord.X = 6;
 		coord.Y = 16;
 		SetConsoleCursorPosition(handle, coord);
-		printf("7th  player%d  %d", top10[6].playerNum, top10[6].score);
+		printf("7th  player%d  %d", top10[size - 7].playerNum, top10[size - 7].score);
 	}
 	if (size > 7) {
 		coord.X = 6;
 		coord.Y = 18;
 		SetConsoleCursorPosition(handle, coord);
-		printf("8th  player%d  %d", top10[7].playerNum, top10[7].score);
+		printf("8th  player%d  %d", top10[size - 8].playerNum, top10[size - 8].score);
 	}
 	if (size > 8) {
 		coord.X = 6;
 		coord.Y = 20;
 		SetConsoleCursorPosition(handle, coord);
-		printf("9th  player%d  %d", top10[8].playerNum, top10[8].score);
+		printf("9th  player%d  %d", top10[size - 9].playerNum, top10[size - 9].score);
 	}
 	if (size > 9) {
 		coord.X = 6;
 		coord.Y = 20;
 		SetConsoleCursorPosition(handle, coord);
-		printf("10th  player%d  %d", top10[9].playerNum, top10[9].score);
+		printf("10th  player%d  %d", top10[size - 10].playerNum, top10[size - 10].score);
 	}
 	_getch();
 }

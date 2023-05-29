@@ -660,20 +660,45 @@ int is_same5(int number_table[][5])
 Player* calculate_rank(Player* player) {
 	int numOfPlayers = fread_playerNum();
 
-	// 내림차순으로 정렬
-	asc_rank(player, numOfPlayers);
+	player = desc_rank(player, numOfPlayers);
 
 	for (int i = 0; i < numOfPlayers; i++) {
 		player[i].rank = i + 1;
 		//printf("%d %d:%d\n", player[i].rank, player[i].playerNum, player[i].score);
 	}
 
+
 	// 정렬한거 보내주기
 	return player;
 }
 
 // 오름차순 정렬
-void asc_rank(Player* player, int size)
+//Player* asc_rank(Player* player, int size)
+//{
+//	int maxIdx;
+//	Player temp;
+//
+//	for (int i = 0; i < size - 1; i++)
+//	{
+//		maxIdx = i;
+//		for (int j = i + 1; j < size; j++)
+//		{
+//			if (player[j].score < player[maxIdx].score)
+//				maxIdx = j;
+//			else if ((player[j].score == player[maxIdx].score) && (player[j].playerNum < player[maxIdx].playerNum))
+//				maxIdx = j;
+//		}
+//
+//		temp = player[i];
+//		player[i] = player[maxIdx];
+//		player[maxIdx] = temp;
+//	}
+//
+//	return player;
+//}
+
+// 내림차순
+Player* desc_rank(Player* player, int size)
 {
 	int maxIdx;
 	Player temp;
@@ -683,7 +708,7 @@ void asc_rank(Player* player, int size)
 		maxIdx = i;
 		for (int j = i + 1; j < size; j++)
 		{
-			if (player[j].score < player[maxIdx].score)
+			if (player[j].score > player[maxIdx].score) // Change the comparison operator to >
 				maxIdx = j;
 			else if ((player[j].score == player[maxIdx].score) && (player[j].playerNum < player[maxIdx].playerNum))
 				maxIdx = j;
@@ -693,6 +718,8 @@ void asc_rank(Player* player, int size)
 		player[i] = player[maxIdx];
 		player[maxIdx] = temp;
 	}
+
+	return player;
 }
 
 // top10 만 잘라서 리턴
@@ -707,7 +734,7 @@ Player* cut_10th(Player* player) {
 	player = calculate_rank(player);
 
 
-	for (int i = 0; i < numOfPlayers; i++) {
+	for (int i = numOfPlayers - 1; i >= 0; i--) {
 		topten[i].rank = player[i].rank;
 		topten[i].playerNum = player[i].playerNum;
 		topten[i].score = player[i].score;

@@ -61,7 +61,9 @@ int is_same5(int number_table[][5]);
 Player* calculate_rank(Player* palyer);
 
 // 순위 오름차순 정렬
-void asc_rank(Player* player, int size);
+//Player* asc_rank(Player* player, int size);
+
+Player* desc_rank(Player* player, int size);
 
 // top10 만 잘라서 리턴
 Player* cut_10th(Player* player);

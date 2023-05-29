@@ -370,7 +370,21 @@ void run_real_game3()
 			while (1)
 			{
 				kb_input = _getch();
-				if (kb_input == ENTER && location_count == 0)
+				if (kb_input == ESC || (kb_input == ENTER && location_count == 0)) {
+					system("cls");
+					play_screen(21, 13, 34, score);
+					for (int i = 0; i < 3; i++)
+					{
+						for (int j = 0; j < 3; j++)
+						{
+							if (number_table[i][j] != 0)
+								print_number(i, j, number_table[i][j]);
+						}
+					}
+					kb_input = 0;
+					break;
+				}
+				else if (kb_input == ENTER && location_count == 0)
 				{
 					system("cls");
 					play_screen(21, 13, 34, score);
@@ -706,7 +720,21 @@ void run_real_game4()
 			while (1)
 			{
 				kb_input = _getch();
-				if (kb_input == ENTER && location_count == 0)
+				if (kb_input == ESC || (kb_input == ENTER && location_count == 0)) {
+					system("cls");
+					play_screen(30, 21, 43, score);
+					for (int i = 0; i < 4; i++)
+					{
+						for (int j = 0; j < 4; j++)
+						{
+							if (number_table[i][j] != 0)
+								print_number(i, j, number_table[i][j]);
+						}
+					}
+					kb_input = 0;
+					break;
+				}
+				else if (kb_input == ENTER && location_count == 0)
 				{
 					system("cls");
 					play_screen(30, 21, 43, score);
@@ -1041,7 +1069,21 @@ void run_real_game5()
 			while (1)
 			{
 				kb_input = _getch();
-				if (kb_input == ENTER && location_count == 0)
+				if (kb_input == ESC || (kb_input == ENTER && location_count == 0)) {
+					system("cls");
+					play_screen(39, 26, 52, score);
+					for (int i = 0; i < 5; i++)
+					{
+						for (int j = 0; j < 5; j++)
+						{
+							if (number_table[i][j] != 0)
+								print_number(i, j, number_table[i][j]);
+						}
+					}
+					kb_input = 0;
+					break;
+				}
+				else if (kb_input == ENTER && location_count == 0)
 				{
 					system("cls");
 					play_screen(39, 26, 52, score);
